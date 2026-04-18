@@ -45,8 +45,8 @@ public class MyVector
 
     public static bool operator ==(MyVector? left, MyVector? right)
   {
-    ArgumentNullException.ThrowIfNull(left);
-    ArgumentNullException.ThrowIfNull(right);
+    if (ReferenceEquals(left, right)) return true;
+    if (left is null || right is null) return false;
 
     return (left.DirectionX == right.DirectionX) && (left.DirectionY == right.DirectionY);
   }
@@ -60,7 +60,7 @@ public class MyVector
   {
     ArgumentNullException.ThrowIfNull(vector);
       
-    return Math.Sqrt(Math.Pow(vector.DirectionX, 2) + Math.Pow(vector.DirectionY, 2));
+    return Math.Sqrt(vector.DirectionX * vector.DirectionX + vector.DirectionY * vector.DirectionY);
   }
   
     public override bool Equals(object? obj)
