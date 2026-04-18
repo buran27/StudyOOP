@@ -1,12 +1,13 @@
 
 namespace Study.Vector;
 
+
 public class MyVector
 {
   public double DirectionX {get;}
   public double DirectionY {get;}
 
-  public MyVector(double X, double Y) {DirectionX = X; DirectionY = Y;}
+  public MyVector(double x, double y) {DirectionX = x; DirectionY = y;}
 
   public override string ToString(){
     return $"({DirectionX}, {DirectionY})";
@@ -14,8 +15,8 @@ public class MyVector
 
   public static MyVector operator +(MyVector left, MyVector right)
   {
-    if(left is null || right is null)
-      throw new ArgumentNullException();
+    ArgumentNullException.ThrowIfNull(left);
+    ArgumentNullException.ThrowIfNull(right);
 
     return new MyVector(
       left.DirectionX + right.DirectionX,
@@ -25,8 +26,8 @@ public class MyVector
 
   public static MyVector operator -(MyVector left, MyVector right)
   {
-    if(left is null || right is null)
-      throw new ArgumentNullException();
+    ArgumentNullException.ThrowIfNull(left);
+    ArgumentNullException.ThrowIfNull(right);
 
     return new MyVector(
       left.DirectionX - right.DirectionX,
@@ -34,46 +35,32 @@ public class MyVector
     );
   }
 
-    public static MyVector operator *(MyVector left, MyVector right)
+    public static double operator *(MyVector left, MyVector right)
   {
-    if(left is null || right is null)
-      throw new ArgumentNullException();
+    ArgumentNullException.ThrowIfNull(left);
+    ArgumentNullException.ThrowIfNull(right);
 
-    return new MyVector(
-      left.DirectionX * right.DirectionX,
-      left.DirectionY * right.DirectionY
-    );
+    return left.DirectionX * right.DirectionX + left.DirectionY * right.DirectionY;
   }
 
-    public static bool operator ==(MyVector left, MyVector right)
+    public static bool operator ==(MyVector? left, MyVector? right)
   {
-    if(left is null || right is null)
-      return false;
+    ArgumentNullException.ThrowIfNull(left);
+    ArgumentNullException.ThrowIfNull(right);
 
     return (left.DirectionX == right.DirectionX) && (left.DirectionY == right.DirectionY);
   }
 
-    public static bool operator !=(MyVector left, MyVector right)
+    public static bool operator !=(MyVector? left, MyVector? right)
   {
     return !(left == right);
   }
 
-    public static MyVector operator +(MyVector vector)
+    public static double operator +(MyVector vector)
   {
-    if (vector is null)
-      throw new ArgumentNullException();
-    return vector;
-  }
-
-    public static MyVector operator -(MyVector vector)
-  {
-    if (vector is null)
-      throw new ArgumentNullException();
+    ArgumentNullException.ThrowIfNull(vector);
       
-    return new MyVector(
-      -vector.DirectionX,
-      -vector.DirectionY
-    );
+    return Math.Sqrt(Math.Pow(vector.DirectionX, 2) + Math.Pow(vector.DirectionY, 2));
   }
   
     public override bool Equals(object? obj)

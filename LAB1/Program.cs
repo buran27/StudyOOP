@@ -1,5 +1,4 @@
-﻿using Study.Vector;
-namespace Study.Program;
+﻿namespace Study.Program;
 
 
 

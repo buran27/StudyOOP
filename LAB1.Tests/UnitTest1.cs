@@ -45,7 +45,6 @@ public class UnitTest1
 
         var result = left * right;
 
-        Assert.Equal(3, result.DirectionX);
-        Assert.Equal(-8, result.DirectionY);
+        Assert.Equal(-5, result);
     }
 }
