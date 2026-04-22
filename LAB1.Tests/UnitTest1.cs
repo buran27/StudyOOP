@@ -47,4 +47,66 @@ public class UnitTest1
 
         Assert.Equal(-5, result);
     }
+
+    [Fact]
+    public void UnaryPlus()
+    {
+        var vector = new MyVector(2, -3);
+
+        var result = +vector;
+
+        Assert.Equal(Math.Sqrt(2 * 2 + 3 * 3), result);
+    }
+
+    [Fact]
+    public void EqualityOperator()
+    {
+        var first = new MyVector(1, 2);
+        var second = new MyVector(1, 2);
+
+        var result = first == second;
+
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void InequalityOperator()
+    {
+        var first = new MyVector(1, 2);
+        var second = new MyVector(1, 3);
+
+        var result = first != second;
+
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void Equals_ForEqualVectors()
+    {
+        var first = new MyVector(1, 2);
+        var second = new MyVector(1, 2);
+
+        var result = first.Equals(second);
+
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void GetHashCode_ForEqualVectors()
+    {
+        var first = new MyVector(1, 2);
+        var second = new MyVector(1, 2);
+
+        Assert.Equal(first.GetHashCode(), second.GetHashCode());
+    }
+
+    [Fact]
+    public void ToString_CorrectFormat()
+    {
+        var vector = new MyVector(1, 2);
+
+        var result = vector.ToString();
+
+        Assert.Equal("(1, 2)", result);
+    } 
 }
