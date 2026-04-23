@@ -1,6 +1,5 @@
 ﻿
 // using Study.Mediator;
-using Study.Tree;
 
 // var chatRoom = new ChatRoomMediator();
 
@@ -20,49 +19,52 @@ using Study.Tree;
 
 
 
-var root = new TreeNode("Root");
 
-var electronics = new TreeNode("Electronics");
-var books = new TreeNode("Books");
-var clothes = new TreeNode("Clothes");
+// using Study.Tree;
 
-var phones = new TreeNode("Phones");
-var laptops = new TreeNode("Laptops");
-var fiction = new TreeNode("Fiction");
-var science = new TreeNode("Science");
-var men = new TreeNode("Men");
-var women = new TreeNode("Women");
+// var root = new TreeNode("Root");
 
-var android = new TreeNode("Android");
-var iphone = new TreeNode("iPhone");
-var gaming = new TreeNode("Gaming Laptop");
-var ultrabook = new TreeNode("Ultrabook");
+// var electronics = new TreeNode("Electronics");
+// var books = new TreeNode("Books");
+// var clothes = new TreeNode("Clothes");
 
-root.AddChild(electronics);
-root.AddChild(books);
-root.AddChild(clothes);
+// var phones = new TreeNode("Phones");
+// var laptops = new TreeNode("Laptops");
+// var fiction = new TreeNode("Fiction");
+// var science = new TreeNode("Science");
+// var men = new TreeNode("Men");
+// var women = new TreeNode("Women");
 
-electronics.AddChild(phones);
-electronics.AddChild(laptops);
+// var android = new TreeNode("Android");
+// var iphone = new TreeNode("iPhone");
+// var gaming = new TreeNode("Gaming Laptop");
+// var ultrabook = new TreeNode("Ultrabook");
 
-books.AddChild(fiction);
-books.AddChild(science);
+// root.AddChild(electronics);
+// root.AddChild(books);
+// root.AddChild(clothes);
 
-clothes.AddChild(men);
-clothes.AddChild(women);
+// electronics.AddChild(phones);
+// electronics.AddChild(laptops);
 
-phones.AddChild(android);
-phones.AddChild(iphone);
+// books.AddChild(fiction);
+// books.AddChild(science);
 
-laptops.AddChild(gaming);
-laptops.AddChild(ultrabook);
+// clothes.AddChild(men);
+// clothes.AddChild(women);
 
-Console.WriteLine("Current node value:");
-root.PrintNode();
+// phones.AddChild(android);
+// phones.AddChild(iphone);
 
-Console.WriteLine("\nChildren of root:");
-root.PrintChildren();
+// laptops.AddChild(gaming);
+// laptops.AddChild(ultrabook);
 
-Console.WriteLine("\nRecursive tree traversal:");
-root.Traverse();
+// Console.WriteLine("Current node value:");
+// root.PrintNode();
+
+// Console.WriteLine("\nChildren of root:");
+// root.PrintChildren();
+
+// Console.WriteLine("\nRecursive tree traversal:");
+// root.Traverse();
 

@@ -15,8 +15,6 @@ public class ChatRoomMediator : IMediator
   
   public void SendMessage(string message, User sender)
   {
-    ArgumentNullException.ThrowIfNull(sender);
-
     foreach (var user in _users)
     {
       if (user != sender)

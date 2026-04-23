@@ -15,8 +15,6 @@ public class MyVector
 
   public static MyVector operator +(MyVector left, MyVector right)
   {
-    ArgumentNullException.ThrowIfNull(left);
-    ArgumentNullException.ThrowIfNull(right);
 
     return new MyVector(
       left.DirectionX + right.DirectionX,
@@ -26,8 +24,6 @@ public class MyVector
 
   public static MyVector operator -(MyVector left, MyVector right)
   {
-    ArgumentNullException.ThrowIfNull(left);
-    ArgumentNullException.ThrowIfNull(right);
 
     return new MyVector(
       left.DirectionX - right.DirectionX,
@@ -37,15 +33,12 @@ public class MyVector
 
     public static double operator *(MyVector left, MyVector right)
   {
-    ArgumentNullException.ThrowIfNull(left);
-    ArgumentNullException.ThrowIfNull(right);
 
     return left.DirectionX * right.DirectionX + left.DirectionY * right.DirectionY;
   }
 
     public static bool operator ==(MyVector? left, MyVector? right)
   {
-    if (ReferenceEquals(left, right)) return true;
     if (left is null || right is null) return false;
 
     return (left.DirectionX == right.DirectionX) && (left.DirectionY == right.DirectionY);
@@ -58,7 +51,6 @@ public class MyVector
 
     public static double operator +(MyVector vector)
   {
-    ArgumentNullException.ThrowIfNull(vector);
       
     return Math.Sqrt(vector.DirectionX * vector.DirectionX + vector.DirectionY * vector.DirectionY);
   }
